@@ -11,10 +11,10 @@ export class AppRoot {
 
   render() {
     return (
-      <div class="container mx-auto m-4">
-        <header>
-          <h1>Micro Design System</h1>
-          <h2>An example design system using Stencil and Tailwind</h2>
+      <div class="container mx-auto border-t-4 border-indigo-500">
+        <header class="mb-16">
+          <h1 class="mt-2 text-gray-800 font-semibold text-2xl">Micro Design System</h1>
+          <h2 class="text-gray-700 font-light mt-2">An example design system using Stencil and Tailwind</h2>
         </header>
 
         <main>

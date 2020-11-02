@@ -11,7 +11,7 @@ export class AppHome {
 
   render() {
     return (
-      <div class='app-home'>
+      <div>
         {/* <p>
           Welcome to the Stencil App Starter.
           You can use this starter to build entire apps all with
@@ -24,10 +24,10 @@ export class AppHome {
             Profile page
           </button>
         </stencil-route-link> */}
-        <micro-box>
-          <p class="bg-red-600">
-            Hello
-          </p>
+        {/* <micro-header>This is a header</micro-header> */}
+
+        <micro-box marginTop={20}>
+          Fuck sake
         </micro-box>
       </div>
     );

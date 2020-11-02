@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults, } from "@stencil/router";
-import { MarginBottom, MarginLeft, MarginRight, MarginTop, PaddingBottom, PaddingLeft, PaddingRight, PaddingTop, } from "./components/units";
+import { Level, MarginBottom, MarginLeft, MarginRight, MarginTop, PaddingBottom, PaddingLeft, PaddingRight, PaddingTop, } from "./components/units";
 export namespace Components {
     interface AppHome {
     }
@@ -26,6 +26,9 @@ export namespace Components {
         "paddingTop": PaddingTop;
     }
     interface MicroButton {
+    }
+    interface MicroHeader {
+        "level": Level;
     }
 }
 declare global {
@@ -59,12 +62,19 @@ declare global {
         prototype: HTMLMicroButtonElement;
         new (): HTMLMicroButtonElement;
     };
+    interface HTMLMicroHeaderElement extends Components.MicroHeader, HTMLStencilElement {
+    }
+    var HTMLMicroHeaderElement: {
+        prototype: HTMLMicroHeaderElement;
+        new (): HTMLMicroHeaderElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "micro-box": HTMLMicroBoxElement;
         "micro-button": HTMLMicroButtonElement;
+        "micro-header": HTMLMicroHeaderElement;
     }
 }
 declare namespace LocalJSX {
@@ -87,12 +97,16 @@ declare namespace LocalJSX {
     }
     interface MicroButton {
     }
+    interface MicroHeader {
+        "level"?: Level;
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "micro-box": MicroBox;
         "micro-button": MicroButton;
+        "micro-header": MicroHeader;
     }
 }
 export { LocalJSX as JSX };
@@ -104,6 +118,7 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "micro-box": LocalJSX.MicroBox & JSXBase.HTMLAttributes<HTMLMicroBoxElement>;
             "micro-button": LocalJSX.MicroButton & JSXBase.HTMLAttributes<HTMLMicroButtonElement>;
+            "micro-header": LocalJSX.MicroHeader & JSXBase.HTMLAttributes<HTMLMicroHeaderElement>;
         }
     }
 }
